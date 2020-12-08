@@ -1,4 +1,4 @@
 package datastructure.linkedlist
 
-interface Node {
+interface Node<T> {
 }
