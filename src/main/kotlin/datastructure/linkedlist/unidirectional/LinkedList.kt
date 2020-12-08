@@ -1,30 +1,39 @@
 package datastructure.linkedlist.unidirectional
 
-import datastructure.linkedlist.List
-import datastructure.linkedlist.Node
+class LinkedList<T> constructor(var head: Node<T>) {
 
-class LinkedList: List<Node<String>> {
-    override fun size(): Int {
-        TODO("Not yet implemented")
+    var length: Int = 0
+    var tail = this.head
+
+    fun size(): Int = this.length
+
+    fun prepend(item: Node<T>): Unit {
+        item.next = this.head
+        this.head = item
     }
 
-    override fun next(): Node<String> {
-        TODO("Not yet implemented")
+    fun append(item: Node<T>): Unit {
+        this.tail = item
+        this.append(head, item)
     }
 
-    override fun hasNext(): Boolean {
-        TODO("Not yet implemented")
+    fun append(target: Node<T>, item: Node<T>): Unit {
+        if(target.hasNext()) {
+            this.append(target.next() !!, item)
+        } else {
+            target.next = item
+        }
+    }
+     
+    fun pop(): Node<T> {
+        return this.tail
     }
 
-    override fun add(item: Node<String>): Unit {
-
-    }
+    fun remove(item: Node<T>): Unit {
         
-    override fun delete(item: Node<String>): Unit {
-
     }
 
-    override fun printAll() {
+    fun printAll() {
         TODO("Not yet implemented")
     }
 
