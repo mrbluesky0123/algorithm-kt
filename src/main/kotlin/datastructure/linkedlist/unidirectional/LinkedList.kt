@@ -29,7 +29,7 @@ class LinkedList<T> constructor(var head: Node<T>) {
         return this.tail
     }
 
-    fun remove(item: Node<T>): Unit {
+    fun remove(value: T): Unit {
         
     }
 
