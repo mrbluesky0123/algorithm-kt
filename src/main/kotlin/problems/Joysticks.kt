@@ -1,23 +1,26 @@
 package problems
 
 
-fun solution(name: String) {
+fun solution(name: String): Int {
     val chars = charArrayOf('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
         'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
 
     var nameChars = name.toCharArray()
     var cnt = 0
     var currentIndex = 0
-    var prevChar = chars[0]
-    for(character in nameChars) {
-
+    var initChar = 'A'
+    for(curChar in nameChars) {
+        var back = ((initChar - curChar).toInt() + 26) % 26
+        var front =  ((curChar - initChar).toInt() + 26) % 26
+        cnt += Math.min(back, front)
     }
 
+    return cnt + (nameChars.size-1)
 
 }
 
 
 fun main(args: Array<String>) {
-    println((('B' - 'Z').toInt()) % 26)
-    println(-24.0 % 26.0)
+    var name = "JAZ"
+    println(solution(name))
 }
