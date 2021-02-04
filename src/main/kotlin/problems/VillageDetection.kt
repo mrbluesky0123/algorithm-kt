@@ -1,5 +1,7 @@
 package problems
 
+/** Backjoon 2667 */
+
 import java.util.*
 
 var apartments: Array<String>? = null
