@@ -20,6 +20,6 @@ fun main(args: Array<String>) = with(Scanner(System.`in`)) {
         var pirosArray = piros.toTypedArray()
 
     }
-    piro =
+//    piro =
 
 }
